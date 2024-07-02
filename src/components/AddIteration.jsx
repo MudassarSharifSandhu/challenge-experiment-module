@@ -51,7 +51,7 @@ const AddIteration = ({
           gap: "5px",
         }}
       >
-        <Typography sx={{ color: "gray", width: "90px", fontSize: 20 }}>
+        <Typography sx={{ color: "gray", width: "60px",ml:"20px", fontSize: 20 }}>
           EM-{iteration.id}
         </Typography>
         <CssTextField
