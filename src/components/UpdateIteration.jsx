@@ -57,7 +57,7 @@ const UpdateIteration = ({
   activeIteration,
   setActiveIteration,
   removeIteration,
-  handleDoneClick
+  handleDoneClick,
 }) => {
   return (
     <>
@@ -90,62 +90,48 @@ const UpdateIteration = ({
               e.target.value.length <= 35 && setActiveIteration(e.target.value);
             }}
           />
-          <Box>
-            <Box sx={{ gap: "10px", display: "flex" }}>
-              <CustomButton
-                variant="outlined"
-                active={
-                  activeIteration.length >= 0 && activeIteration.length <= 10
-                }
-                onClick={() => {}}
-              >
-                SHORT
-              </CustomButton>
-              <CustomButton
-                variant="outlined"
-                active={
-                  activeIteration.length >= 11 && activeIteration.length <= 20
-                }
-                onClick={() => {}}
-              >
-                MEDIUM LENGTH
-              </CustomButton>
-            </Box>
-            <Box sx={{ width: "335px", mt: "15px" }}>
-              <CustomButton
-                variant="outlined"
-                active={
-                  activeIteration.length >= 21 && activeIteration.length <= 35
-                }
-                onClick={() => {}}
-              >
-                VERY VERY VERY LONG (UP TO 35 CHAR)
-              </CustomButton>
-            </Box>
-            <Divider
-              sx={{
-                color: "#8080802d",
-                my: "10px",
-                borderColor: "#8080802d",
-                borderWidth: "1px",
-              }}
-            />
-            <Box sx={{ justifyContent: "end", display: "flex" }}>
-              <Button
-                variant="text"
-                sx={{ color: "gray" }}
-                onClick={() => removeIteration(updateIterationData.id)}
-              >
-                REMOVE
-              </Button>
-              <Button
-                variant="text"
-                sx={{ color: "white" }}
-                onClick={handleDoneClick}
-              >
-                DONE
-              </Button>
-            </Box>
+          <Box sx={{ gap: "10px", display: "flex" }}>
+            <CustomButton
+              variant="outlined"
+              active={activeIteration.length >= 0 && activeIteration.length <= 10}
+              onClick={() => {}}
+            >
+              SHORT
+            </CustomButton>
+            <CustomButton
+              variant="outlined"
+              active={activeIteration.length >= 11 && activeIteration.length <= 20}
+              onClick={() => {}}
+            >
+              MEDIUM LENGTH
+            </CustomButton>
+          </Box>
+          <CustomButton
+            variant="outlined"
+            active={activeIteration.length >= 21 && activeIteration.length <= 35}
+            onClick={() => {}}
+          >
+            VERY VERY VERY LONG (UP TO 35 CHAR)
+          </CustomButton>
+          <Divider
+            sx={{
+              color: "#8080802d",
+              my: "10px",
+              borderColor: "#8080802d",
+              borderWidth: "1px",
+            }}
+          />
+          <Box sx={{ justifyContent: "end", display: "flex" }}>
+            <Button
+              variant="text"
+              sx={{ color: "gray" }}
+              onClick={() => removeIteration(updateIterationData.id)}
+            >
+              REMOVE
+            </Button>
+            <Button variant="text" sx={{ color: "white" }} onClick={handleDoneClick}>
+              DONE
+            </Button>
           </Box>
         </Box>
       </Box>

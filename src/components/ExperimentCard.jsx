@@ -12,7 +12,6 @@ import AddIteration from "./AddIteration";
 export default function ExperimentCard({
   item,
   toggleLock,
-  // removeItem,
   updateExpermint,
 }) {
   const [checked, setChecked] = React.useState(false);
@@ -26,7 +25,6 @@ export default function ExperimentCard({
 
   const handleReset = () => {
     updateExpermint(item.id, { ...item, iterations: [] });
-    // updateExpermint(item.id, item, true);
   };
 
   const handleChange = () => {
@@ -76,7 +74,7 @@ export default function ExperimentCard({
         setActiveIterationId(clickedIteration.id);
         setUpdateIterationData(clickedIteration);
         setActiveIteration(clickedIteration.title);
-    }
+    };
   };
 
   const updateIterationTitle = (id, newTitle) => {
@@ -84,7 +82,7 @@ export default function ExperimentCard({
       iteration.id === id ? { ...iteration, title: newTitle } : iteration
     );
     updateExpermint(item.id, { ...item, iterations: updatedIterations });
-    setUpdateIterationData({})
+    setUpdateIterationData({});
     setActiveIterationId(null);
   };
 
@@ -194,14 +192,6 @@ export default function ExperimentCard({
               addIteration={addIteration}
               addNewIteration={addNewIteration}
             />
-            {/* <Button
-              onClick={() => removeItem(item.id)}
-              variant="contained"
-              color="error"
-              startIcon={<DeleteIcon />}
-            >
-              Delete
-            </Button> */}
           </Box>
         </Box>
       </Collapse>

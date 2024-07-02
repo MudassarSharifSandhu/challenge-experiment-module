@@ -4,23 +4,7 @@ import { Box } from "@mui/material";
 import AddExperimentCardButton from "../components/AddExperimentButton";
 
 export const ExperimentModule = () => {
-  const [items, setItems] = useState([
-    // {
-    //   id: 1,
-    //   title: "Experiment Module",
-    //   is_locked: false,
-    //   iterations: [
-    //     { id: 1, title: "Iteration 1-1" },
-    //     { id: 2, title: "Iteration 1-2" },
-    //   ],
-    // },
-    // {
-    //   id: 2,
-    //   title: "Experiment Module",
-    //   is_locked: false,
-    //   iterations: [{ id: 1, title: "Iteration 2-1" }],
-    // },
-  ]);
+  const [items, setItems] = useState([]);
 
   const toggleLock = useCallback((id) => {
     setItems((prevItems) =>

@@ -1,4 +1,3 @@
-// src/tests/ExperimentModule.test.js
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ExperimentModule } from '../pages/ExperimentModule';

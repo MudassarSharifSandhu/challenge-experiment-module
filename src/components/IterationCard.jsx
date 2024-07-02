@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Box, Typography } from "@mui/material";
-export const IterationCard = React.memo(({ iteration, is_new = false,handleClickIteration,itemData }) => {
 
-    return (
-      <>
+export const IterationCard = React.memo(({ iteration, is_new = false, handleClickIteration, itemData }) => {
+  return (
+    <>
       <Box
         sx={{
           display: "flex",
@@ -15,19 +15,19 @@ export const IterationCard = React.memo(({ iteration, is_new = false,handleClick
           borderRadius: "6px",
           alignItems: "center",
           justifyContent: "space-between",
-          cursor: (!is_new && !itemData.is_locked )&& "pointer",
+          cursor: (!is_new && !itemData.is_locked) ? "pointer" : "default", // Updated cursor logic
         }}
         onClick={() => {
-          (!is_new  && !itemData.is_locked) && handleClickIteration(iteration);
+          (!is_new && !itemData.is_locked) && handleClickIteration(iteration);
         }}
       >
         <Box sx={{ display: "flex", gap: "25px" }}>
-          <Typography sx={{color:"gray"}}>EM-{iteration.id}</Typography>
+          <Typography sx={{ color: "gray" }}>EM-{iteration.id}</Typography>
           <Typography>{iteration.title}</Typography>
         </Box>
         {!is_new && (
           <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <Typography sx={{color:"gray"}}>Selection</Typography>
+            <Typography sx={{ color: "gray" }}>Selection</Typography>
             <Box
               style={{
                 backgroundColor: "#02cf02",
@@ -39,6 +39,6 @@ export const IterationCard = React.memo(({ iteration, is_new = false,handleClick
           </Box>
         )}
       </Box>
-      </>
-    );
+    </>
+  );
 });
