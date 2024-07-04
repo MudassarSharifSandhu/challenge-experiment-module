@@ -1,12 +1,8 @@
 import React from 'react'
-import { ExperimentModule } from './pages/ExperimentModule';
+import { ExperimentModule } from './pages/ExperimentModule'
 
 const App = () => {
-  return (
-    <>
-      <ExperimentModule/>
-    </>
-  )
+  return <ExperimentModule />
 }
 
 export default App

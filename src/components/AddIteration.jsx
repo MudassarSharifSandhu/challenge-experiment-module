@@ -1,38 +1,38 @@
-import React from "react";
-import { Box, TextField, Typography, styled } from "@mui/material";
+import React from 'react'
+import { Box, TextField, Typography, styled } from '@mui/material'
 
 const CssTextField = styled(TextField)({
-  "& label.Mui-focused": {
-    color: "gray",
+  '& label.Mui-focused': {
+    color: 'gray'
   },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "transparent",
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'transparent'
   },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "transparent",
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'transparent'
     },
-    "&:hover fieldset": {
-      borderColor: "transparent",
+    '&:hover fieldset': {
+      borderColor: 'transparent'
     },
-    "&.Mui-focused fieldset": {
-      borderColor: "transparent",
-    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'transparent'
+    }
   },
-  "& .MuiInputBase-root": {
-    color: "white",
-    fontSize: 20,
+  '& .MuiInputBase-root': {
+    color: 'white',
+    fontSize: 20
   },
-  "& .MuiInputBase-input": {
-    "&::placeholder": {
-      color: "gray",
-      opacity: 1,
-    },
-  },
-});
+  '& .MuiInputBase-input': {
+    '&::placeholder': {
+      color: 'gray',
+      opacity: 1
+    }
+  }
+})
 
 const AddIteration = ({
-  is_new = false,
+  isNew = false,
   iteration,
   newIteration,
   setNewIteration,
@@ -42,72 +42,79 @@ const AddIteration = ({
     <>
       <Box
         sx={{
-          display: "flex",
-          backgroundColor: "#1a1a1a",
-          color: is_new ? "#757575" : "white",
-          margin: "10px 6px",
-          borderRadius: "6px",
-          alignItems: "center",
-          gap: "5px",
+          display: 'flex',
+          backgroundColor: '#1a1a1a',
+          color: isNew ? '#757575' : 'white',
+          margin: '10px 6px',
+          borderRadius: '6px',
+          alignItems: 'center',
+          gap: '5px'
         }}
       >
-        <Typography sx={{ color: "gray", width: "60px",ml:"20px", fontSize: 20 }}>
+        <Typography sx={{
+          color: 'gray',
+          width: '60px',
+          ml: '20px',
+          fontSize: 20
+        }}
+        >
           EM-{iteration.id}
         </Typography>
+
         <CssTextField
           fullWidth
-          placeholder="Adding Iteration..."
-          variant="outlined"
-          autoComplete="off"
+          placeholder='Adding Iteration...'
+          variant='outlined'
+          autoComplete='off'
           value={newIteration}
           onChange={(e) => {
-            setNewIteration(e.target.value);
+            setNewIteration(e.target.value)
           }}
           inputProps={{ maxLength: 35 }}
         />
       </Box>
       <Box
         sx={{
-          display: "flex",
-          backgroundColor: "#1a1a1a",
-          color: is_new ? "#757575" : "white",
-          margin: "10px 6px",
-          borderRadius: "6px",
-          gap: "10px",
-          minHeight: 40,
+          display: 'flex',
+          backgroundColor: '#1a1a1a',
+          color: isNew ? '#757575' : 'white',
+          margin: '10px 6px',
+          borderRadius: '6px',
+          gap: '10px',
+          minHeight: 40
         }}
       >
         <Typography
           sx={{
-            color: "gray",
-            display: "block",
-            width: "88%",
-            textAlign: "start",
-            padding: "10px 20px",
+            color: 'gray',
+            display: 'block',
+            width: '88%',
+            textAlign: 'start',
+            padding: '10px 20px',
             fontWeight: 500,
-            fontSize: 20,
+            fontSize: 20
           }}
         >
-          To Add new iteration, start typing a prompt or{" "}
+          To Add new iteration, start typing a prompt or{' '}
           <Box
-            component="span"
+            component='span'
             sx={{
-              color: "inherit",
-              fontWeight: "inherit",
-              cursor: "pointer",
-              textDecoration: "underline",
+              color: 'inherit',
+              fontWeight: 'inherit',
+              cursor: 'pointer',
+              textDecoration: 'underline'
             }}
-            onClick={()=>{
-                handleGenerate(iteration)
+            onClick={() => {
+              handleGenerate(iteration)
             }}
           >
             generate
-          </Box>{" "}
+          </Box>{' '}
           one.
         </Typography>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default AddIteration;
+export default AddIteration
